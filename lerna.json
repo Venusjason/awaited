@@ -1,0 +1,21 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "changelog": {
+    "cacheDir": ".changelog"
+  },
+  "ignoreChanges": [
+    "**/*.md",
+    "**/package-lock.json",
+    "**/yarn.lock",
+    "**/*.test.ts",
+    "**/*.e2e.ts",
+    "**/demos/**",
+    "**/fixtures/**",
+    "**/dist/**",
+    "**/lib/**",
+    "**/es/**",
+    "**/test/**"
+  ]
+}
