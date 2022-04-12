@@ -5,6 +5,13 @@
   "changelog": {
     "cacheDir": ".changelog"
   },
+  "command": {
+    "publish": {
+      "allowBranch": [
+        "master"
+      ]
+    }
+  },
   "ignoreChanges": [
     "**/*.md",
     "**/package-lock.json",

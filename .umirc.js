@@ -31,7 +31,7 @@ const isDeploy = process.env.SITE_DEPLOY === 'TRUE';
 export default {
   title: groupName,
   base: !isProduction ? '/' : `/${groupName}-doc-site/`,
-  publicPath: !isProduction ? '/' : `https://venusjason.github.io/${groupName}-doc-site/`,
+  publicPath: '/',
   mode: 'site',
   logo: 'https://s4.aconvert.com/convert/p3r68-cdx67/axyt7-0km7f.svg',
   extraBabelPlugins: [
@@ -116,7 +116,7 @@ export default {
     '@s-site-menu-width': '258px',
   },
   ignoreMomentLocale: true,
-  headScripts: ['https://gw.alipayobjects.com/os/antfincdn/fdj3WlJd5c/darkreader.js'],
+  headScripts: [],
   links:
     process.env.NODE_ENV === 'development'
       ? ['https://gw.alipayobjects.com/os/lib/antd/4.6.6/dist/antd.css']
@@ -125,7 +125,7 @@ export default {
   menus: {
     '/components': [
       {
-        title: '架构设计',
+        title: '快速开始',
         children: ['components.md'],
       },
       {

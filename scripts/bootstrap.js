@@ -2,6 +2,7 @@
 const { existsSync, writeFileSync, readdirSync } = require('fs');
 const { join } = require('path');
 const { yParser } = require('@umijs/utils');
+const {name: groupName} = require('../package.json')
 
 (async () => {
   const args = yParser(process.argv);
@@ -10,7 +11,7 @@ const { yParser } = require('@umijs/utils');
   const pkgs = readdirSync(join(__dirname, '../packages')).filter((pkg) => pkg.charAt(0) !== '.');
 
   pkgs.forEach((shortName) => {
-    const name = `min-pro-${shortName}`;
+    const name = `${shortName}`;
 
     const pkgJSONPath = join(__dirname, '..', 'packages', shortName, 'package.json');
     const pkgJSONExists = existsSync(pkgJSONPath);
@@ -26,19 +27,18 @@ const { yParser } = require('@umijs/utils');
         files: ['lib', 'src', 'dist', 'es'],
         repository: {
           type: 'git',
-          url: 'https://github.com/ant-design/pro-components',
+          url: `http://10.215.171.199:7800/fe-pkgs/hdec/packages/${name}`,
         },
         browserslist: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 11'],
-        keywords: ['antd', 'admin', 'ant-design', 'ant-design-pro'],
+        keywords: ['antd', 'admin', 'ant-design', 'ant-design-pro', name, `@${groupName}/${name}`],
         authors: [
-          'chencheng <sorrycc@gmail.com> (https://github.com/sorrycc)',
-          'chenshuai2144 <qixian.cs@outlook.com> (https://github.com/chenshuai2144)',
         ],
         license: 'MIT',
-        bugs: 'http://github.com/umijs/plugins/issues',
-        homepage: `https://github.com/ant-design/pro-components/tree/master/packages/${shortName}#readme`,
+        bugs: 'http://10.215.171.199:7800/fe-pkgs/hdec/-/issues',
+        homepage: `http://10.215.171.199:7800/fe-pkgs/hdec/-/issues`,
         peerDependencies: {
-          umi: '3.x',
+          antd: '4.x',
+          react: '^16.8.0',
         },
         publishConfig: {
           access: 'public',
@@ -74,20 +74,20 @@ const { yParser } = require('@umijs/utils');
 
 > ${json.description}.
 
-See our website [${name}](https://umijs.org/plugins/${shortName}) for more information.
+See our website [@${groupName}/${name}](https://umijs.org/plugins/${shortName}) for more information.
 
 ## Install
 
 Using npm:
 
 \`\`\`bash
-$ npm install --save ${name}
+$ npm install --save @${groupName}/${name}]
 \`\`\`
 
 or using yarn:
 
 \`\`\`bash
-$ yarn add ${name}
+$ yarn add @${groupName}/${name}]
 \`\`\`
 `,
       );

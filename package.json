@@ -12,6 +12,7 @@
   },
   "scripts": {
     "bootstrap": "node ./scripts/bootstrap.js",
+    "gen:pkg": "node ./scripts/gen_pkg.js",
     "build": "npm run build-lib",
     "build-lib": "cross-env BUILD_TYPE=lib father-build & cross-env BUILD_TYPE=es father-build",
     "changelog": "pro-changelog",
@@ -24,7 +25,7 @@
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
     "prettier": "prettier --write \"**/**.{js,jsx,tsx,ts,less,md,json}\"",
     "release": "node ./scripts/release.js",
-    "site": "node ./scripts/preDeploy && cross-env SITE_DEPLOY='TRUE' dumi build",
+    "site": "cross-env SITE_DEPLOY='TRUE' dumi build",
     "size": "npm run build && size-limit",
     "size:build": "cross-env PRO_COMPONENTS_CI='CI' webpack",
     "start": "dumi dev",
@@ -42,7 +43,11 @@
     "> 1%",
     "ie >= 11"
   ],
-  "git": "https://github.com/Venusjason/sprite-components",
+  "repository": {
+    "type": "git",
+    "url": "http://10.215.171.199:7800/fe-pkgs/hdec"
+  },
+  "git": "http://10.215.171.199:7800/fe-pkgs/hdec",
   "devDependencies": {
     "@ant-design/icons": "^4.6.2",
     "@babel/core": "^7.8.3",
