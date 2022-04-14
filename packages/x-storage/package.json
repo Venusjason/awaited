@@ -1,7 +1,7 @@
 {
-  "name": "@hdec/x-storage",
+  "name": "@awaited/x-storage",
   "version": "0.5.0",
-  "description": "hdec 缓存",
+  "description": "awaited 缓存",
   "main": "es/index.js",
   "typings": "es/index.d.ts",
   "unpkg": "lib/index.js",

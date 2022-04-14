@@ -27,15 +27,15 @@ const {name: groupName} = require('../package.json')
         files: ['lib', 'src', 'dist', 'es'],
         repository: {
           type: 'git',
-          url: `http://10.215.171.199:7800/fe-pkgs/hdec/packages/${name}`,
+          url: `http://10.215.171.199:7800/fe-pkgs/awaited/packages/${name}`,
         },
         browserslist: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 11'],
         keywords: ['antd', 'admin', 'ant-design', 'ant-design-pro', name, `@${groupName}/${name}`],
         authors: [
         ],
         license: 'MIT',
-        bugs: 'http://10.215.171.199:7800/fe-pkgs/hdec/-/issues',
-        homepage: `http://10.215.171.199:7800/fe-pkgs/hdec/-/issues`,
+        bugs: 'http://10.215.171.199:7800/fe-pkgs/awaited/-/issues',
+        homepage: `http://10.215.171.199:7800/fe-pkgs/awaited/-/issues`,
         peerDependencies: {
           antd: '4.x',
           react: '^16.8.0',

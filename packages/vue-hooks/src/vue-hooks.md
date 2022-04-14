@@ -7,7 +7,7 @@ nav:
   path: /components
 ---
 
-# `@hdec/vue-hooks`
+# `@awaited/vue-hooks`
 
 - 结合 vue3 hooks 语法（支持 vue2 + composition-api）, `usePaginated` 可以用来替换 `QueryTable` 组件，使用 hooks 组件可以达到 ui 层的最大自定义
 - api 设计借鉴了 [ahooks](https://ahooks.js.org/)
@@ -15,7 +15,7 @@ nav:
 
 ```
 // 安装
-npm i @hdec/vue-hooks -S
+npm i @awaited/vue-hooks -S
 
 ```
 
@@ -26,7 +26,7 @@ npm i @hdec/vue-hooks -S
 ```tsx | pure
 import { defineComponent } from '@vue/composition-api';
 
-import { useRequest, setGlobalRequestOption } from '@hdec/vue-hooks';
+import { useRequest, setGlobalRequestOption } from '@awaited/vue-hooks';
 
 setGlobalRequestOption({
   manual: false,
@@ -198,7 +198,7 @@ import {
   IPageResponse,
   IPagination,
   IElTableColumnItem,
-} from '@hdec/vue-hooks';
+} from '@awaited/vue-hooks';
 
 interface Item {
   name: string;

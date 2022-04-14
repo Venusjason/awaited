@@ -56,7 +56,7 @@ export default {
     },
     {
       name: 'keywords',
-      content: '中后台,admin,Ant Design,ant design,Table,react,hdec',
+      content: '中后台,admin,Ant Design,ant design,Table,react,awaited',
     },
     {
       name: 'apple-mobile-web-app-capable',

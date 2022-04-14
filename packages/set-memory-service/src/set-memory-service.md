@@ -7,7 +7,7 @@ nav:
   path: /components
 ---
 
-# `@hdec/set-memory-service`
+# `@awaited/set-memory-service`
 
 ### 需求背景：
 
@@ -69,7 +69,7 @@ getMemoryData().then((res) => {
 ### 怎么使用
 
 ```typescript
-import setMemoryService, { clearAllMemoryService } from '@hdec/set-memory-service';
+import setMemoryService, { clearAllMemoryService } from '@awaited/set-memory-service';
 
 // 请求后端省市区的接口
 const getAddrs = () => {

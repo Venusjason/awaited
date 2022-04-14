@@ -7,7 +7,7 @@ nav:
   path: /components
 ---
 
-# `@hdec/x-storage`
+# `@awaited/x-storage`
 
 ### 为什么要写这个库？
 
@@ -145,7 +145,7 @@ export default class XStorage<T extends object> {
 ### HOW to use?
 
 ```typescript
-import XStorage from '@hdec/x-storage';
+import XStorage from '@awaited/x-storage';
 
 // 项目中所有缓存 可以在这里先声明
 const defaultLocalStorage = {

@@ -43,7 +43,7 @@ if (!pkgJSONExists) {
     files: ['lib', 'src', 'dist', 'es'],
     repository: {
       type: 'git',
-      url: `http://10.215.171.199:7800/fe-pkgs/hdec/packages/${shortName}`,
+      url: `http://10.215.171.199:7800/fe-pkgs/awaited/packages/${shortName}`,
     },
     dependencies: {},
     devDependencies: {},
@@ -52,8 +52,8 @@ if (!pkgJSONExists) {
     authors: [
     ],
     license: 'MIT',
-    bugs: 'http://10.215.171.199:7800/fe-pkgs/hdec/-/issues',
-    homepage: `http://10.215.171.199:7800/fe-pkgs/hdec/-/issues`,
+    bugs: 'http://10.215.171.199:7800/fe-pkgs/awaited/-/issues',
+    homepage: `http://10.215.171.199:7800/fe-pkgs/awaited/-/issues`,
     peerDependencies: {
       antd: '4.x',
       react: '^16.8.0',
