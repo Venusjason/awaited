@@ -1,9 +1,9 @@
 ---
-title: ProComponents - 页面级别的前端组件
+title: 前端组件库
 order: 10
 sidebar: false
 hero:
-  title: Sprite ❄️
+  title: 你们赶紧取个名字啊 ❄️
   desc: 🏆 让前端开发更简单
   actions:
     - text: 🥳 快速开始 →

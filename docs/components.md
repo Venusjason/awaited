@@ -57,4 +57,4 @@ npm run site
 
 ### TODO
 
-- [] gitee 自动化部署pages
+- [x] gitee 自动化部署pages

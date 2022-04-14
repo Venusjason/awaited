@@ -30,8 +30,8 @@ const isDeploy = process.env.SITE_DEPLOY === 'TRUE';
 
 export default {
   title: groupName,
-  base: !isProduction ? '/' : `/${groupName}-pkgs`,
-  publicPath: '/',
+  base: !isProduction ? '/' : `/${groupName}-pkgs/`,
+  publicPath: isProduction ? `/${groupName}-pkgs/` : '/',
   mode: 'site',
   logo: 'https://s4.aconvert.com/convert/p3r68-cdx67/axyt7-0km7f.svg',
   extraBabelPlugins: [
@@ -45,10 +45,6 @@ export default {
     ],
   ],
   metas: [
-    {
-      property: 'og:site_name',
-      content: 'ProComponents',
-    },
     {
       'data-rh': 'keywords',
       property: 'og:image',
