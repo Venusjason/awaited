@@ -30,7 +30,7 @@ const isDeploy = process.env.SITE_DEPLOY === 'TRUE';
 
 export default {
   title: groupName,
-  base: !isProduction ? '/' : `/${groupName}-doc-site/`,
+  base: !isProduction ? '/' : `/${groupName}-pkgs`,
   publicPath: '/',
   mode: 'site',
   logo: 'https://s4.aconvert.com/convert/p3r68-cdx67/axyt7-0km7f.svg',
