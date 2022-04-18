@@ -2,9 +2,7 @@
 const { existsSync, writeFileSync, readdirSync } = require('fs');
 const { join } = require('path');
 const { yParser } = require('@umijs/utils');
-const {name: groupName} = require('../package.json')
-
-(async () => {
+const { name: groupName } = require('../package.json')(async () => {
   const args = yParser(process.argv);
   const version = '1.0.0-beta.1';
 
@@ -31,8 +29,7 @@ const {name: groupName} = require('../package.json')
         },
         browserslist: ['last 2 versions', 'Firefox ESR', '> 1%', 'ie >= 11'],
         keywords: ['antd', 'admin', 'ant-design', 'ant-design-pro', name, `@${groupName}/${name}`],
-        authors: [
-        ],
+        authors: [],
         license: 'MIT',
         bugs: 'http://10.215.171.199:7800/fe-pkgs/awaited/-/issues',
         homepage: `http://10.215.171.199:7800/fe-pkgs/awaited/-/issues`,

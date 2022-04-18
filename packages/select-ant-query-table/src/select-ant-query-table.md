@@ -25,21 +25,20 @@ or using yarn:
 ```bash
 $ yarn add @awaited/select-ant-query-table
 ```
+
 ### 使用示例
 
 ```tsx
 import React from 'react';
-import SelectAntQueryTable from '@awaited/select-ant-query-table'
+import SelectAntQueryTable from '@awaited/select-ant-query-table';
 
 export default () => {
-  return <SelectAntQueryTable />
-}
+  return <SelectAntQueryTable />;
+};
 ```
 
-### API说明
+### API 说明
 
-|  api   | 描述    | 数据类型 | 默认值 |
-|  ----  | ----  | ----  |----  |
-|  - | - | - | -  |
-
-
+| api | 描述 | 数据类型 | 默认值 |
+| --- | ---- | -------- | ------ |
+| -   | -    | -        | -      |

@@ -1,3 +1,3 @@
-import QueryTable from "./QueryTable";
+import QueryTable from './QueryTable';
 
-export default QueryTable
+export default QueryTable;

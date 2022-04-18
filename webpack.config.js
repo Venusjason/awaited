@@ -6,7 +6,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { readdirSync } = require('fs');
 
-const {name: groupName} = require('./package.json')
+const { name: groupName } = require('./package.json');
 
 const tailPkgs = readdirSync(path.join(__dirname, 'packages')).filter(
   (pkg) => pkg.charAt(0) !== '.',

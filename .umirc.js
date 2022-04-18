@@ -2,7 +2,7 @@ import { readdirSync } from 'fs';
 import chalk from 'chalk';
 import { join } from 'path';
 
-const {name: groupName, git} = require('./package.json')
+const { name: groupName, git } = require('./package.json');
 
 const headPkgList = [];
 // utils must build before core
