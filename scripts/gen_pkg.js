@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const { join } = require('path');
 const { yParser } = require('@umijs/utils');
 const {name: groupName} = require('../package.json')
+const _ = require('lodash')
 
 const version = '0.1.0-beta.1';
 
@@ -19,6 +20,7 @@ const pkgDirname = join(__dirname, '..', 'packages', shortName)
 const reg = /^[a-z0-9-]+$/
 if (!reg.test(shortName)) {
   console.error(`${shortName} 不符合npm包命名规范`)
+  process.exit(1)
   return
 }
 
@@ -93,7 +95,7 @@ if (!existsSync(readmePath)) {
 
 > ${json.description}.
 
-See our website [${name}](https://umijs.org/plugins/${shortName}) for more information.
+See our website [${name}](https://venusjin.gitee.io/awaited-pkgs/components/${shortName}/${shortName}) for more information.
 
 ## Install
 
@@ -121,9 +123,57 @@ if (!existsSync(pkgDirname + '/src/index.ts')) {
     pkgDirname + '/src/index.ts',
     `
     /**
-     * 组件导出口
-     * /
+    * 组件导出口
+    * /
     `
   )
   console.log(chalk.blue(`gen file success:${pkgDirname + '/src/index.ts'}`))
+}
+
+if (!existsSync(`${pkgDirname}/src/${shortName}.md`)) {
+  writeFileSync(
+    `${pkgDirname}/src/${shortName}.md`,
+    `# ${name}
+
+> ${json.description}
+
+### 组件背景
+
+### 组件功能
+
+### 组件实现
+
+### 作者
+
+## Install
+
+Using npm:
+
+\`\`\`bash
+$ npm install --save ${name}
+\`\`\`
+
+or using yarn:
+
+\`\`\`bash
+$ yarn add ${name}
+\`\`\`
+### 使用示例
+\`\`\`tsx
+import React from 'react';
+import ${_.upperFirst(_.camelCase(shortName))} from '@awaited/${shortName}'
+
+export default () => {
+  return <${_.upperFirst(_.camelCase(shortName))} />
+}
+\`\`\`
+### API说明
+|  api   | 描述    | 数据类型 | 默认值 |
+|  ----  | ----  | ----  |----  |
+|  - | - | - | -  |
+`
+,
+  )
+
+  console.log(chalk.blue(`gen file success:${pkgDirname}/src/${shortName}.md`))
 }

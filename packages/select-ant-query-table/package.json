@@ -1,0 +1,45 @@
+{
+  "name": "@awaited/select-ant-query-table",
+  "version": "0.1.0-beta.1",
+  "description": "@awaited/select-ant-query-table",
+  "module": "es/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "dist",
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 11"
+  ],
+  "keywords": [
+    "antd",
+    "admin",
+    "ant-design",
+    "ant-design-pro",
+    "select-ant-query-table",
+    "@awaited/select-ant-query-table"
+  ],
+  "authors": [],
+  "license": "MIT",
+  "bugs": "http://10.215.171.199:7800/fe-pkgs/awaited/-/issues",
+  "homepage": "http://10.215.171.199:7800/fe-pkgs/awaited/-/issues",
+  "peerDependencies": {
+    "antd": "4.x",
+    "react": "^16.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
