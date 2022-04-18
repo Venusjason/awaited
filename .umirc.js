@@ -11,8 +11,10 @@ const pkgList = readdirSync(join(__dirname, 'packages')).filter(
   (pkg) => pkg.charAt(0) !== '.' && !headPkgList.includes(pkg),
 );
 
+console.log(`pkg menus:`, pkgList);
+
 const alias = pkgList.reduce((pre, pkg) => {
-  pre[`@${groupName}/${pkg}`] = join(__dirname, 'packages', pkg, 'src/index.tsx');
+  pre[`@${groupName}/${pkg}`] = join(__dirname, 'packages', pkg, 'src/index.ts');
   return {
     ...pre,
   };
@@ -23,6 +25,8 @@ console.log(`🌼 alias list \n${chalk.blue(Object.keys(alias).join('\n'))}`);
 const tailPkgList = pkgList
   .map((path) => [join('packages', path, 'src'), join('packages', path, 'src', 'components')])
   .reduce((acc, val) => acc.concat(val), []);
+
+console.log(`tailPkgList menus:`, tailPkgList);
 
 const isProduction = process.env.NODE_ENV === 'production';
 
