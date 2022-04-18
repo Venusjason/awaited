@@ -1,6 +1,6 @@
 {
   "name": "@awaited/set-memory-service",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "接口缓存",
   "main": "es/index.js",
   "typings": "es/index.d.ts",

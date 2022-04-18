@@ -1,6 +1,6 @@
 {
   "name": "@awaited/select-ant-query-table",
-  "version": "0.1.0-beta.1",
+  "version": "0.1.0-beta.2",
   "description": "@awaited/select-ant-query-table",
   "module": "es/index.js",
   "main": "lib/index.js",
@@ -15,8 +15,6 @@
     "type": "git",
     "url": "http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table"
   },
-  "dependencies": {},
-  "devDependencies": {},
   "browserslist": [
     "last 2 versions",
     "Firefox ESR",
