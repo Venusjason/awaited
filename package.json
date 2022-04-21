@@ -20,10 +20,10 @@
     "createRelease": "node ./scripts/createRelease.js",
     "deploy": "cross-env SITE_DEPLOY='TRUE' npm run site && gh-pages -d ./dist -r git@gitee.com:venusJin/awaited-pkgs.git -o gitee_origin",
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx  --fix --format=pretty ./packages && npm run lint:prettier && npm run check-deps",
-    "lint:prettier": "npm run prettier &&  git diff && prettier --version && prettier --check \"packages/**/**.{js,jsx,tsx,ts,less,md,json}\" --end-of-line auto",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./packages/**/src/**.{js,jsx,tsx,ts,less,json}",
+    "lint:prettier": "npm run prettier &&  git diff && prettier --version && prettier --check \"packages/**/**.{js,jsx,tsx,ts,md,json}\" --end-of-line auto",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./packages/**/src/**.{js,jsx,tsx,ts,json}",
     "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
-    "prettier": "prettier --write \"**/**.{js,jsx,tsx,ts,less,md,json}\"",
+    "prettier": "prettier --write \"**/**.{js,jsx,tsx,ts,md,json}\"",
     "release": "node ./scripts/release.js",
     "site": "cross-env SITE_DEPLOY='TRUE' dumi build",
     "size": "npm run build && size-limit",
@@ -208,5 +208,8 @@
       "webpack": false,
       "running": false
     }
-  ]
+  ],
+  "dependencies": {
+    "ahooks": "^3.3.8"
+  }
 }
