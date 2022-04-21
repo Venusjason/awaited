@@ -16,7 +16,8 @@
       "@ant-design/pro-skeleton": ["./packages/skeleton/src/index.tsx"],
       "@ant-design/pro-list": ["./packages/list/src/index.tsx"],
       "@ant-design/pro-descriptions": ["./packages/descriptions/src/index.tsx"],
-      "@ant-design/pro-utils": ["./packages/utils/src/index.tsx"]
+      "@ant-design/pro-utils": ["./packages/utils/src/index.tsx"],
+      "@awaited/select-ant-query-table": ["./packages/select-ant-query-table/src/index.ts"]
     }
   },
   "include": [

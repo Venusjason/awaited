@@ -34,6 +34,7 @@
   "bugs": "http://10.215.171.199:7800/fe-pkgs/awaited/-/issues",
   "homepage": "http://10.215.171.199:7800/fe-pkgs/awaited/-/issues",
   "peerDependencies": {
+    "ahooks": "^3.3.8",
     "antd": "4.x",
     "react": "^16.8.0"
   },
