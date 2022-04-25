@@ -3,7 +3,7 @@ const { existsSync, writeFileSync, readdirSync, mkdirSync } = require('fs');
 const chalk = require('chalk');
 const { join } = require('path');
 const { yParser } = require('@umijs/utils');
-const { name: groupName } = require('../package.json');
+const { name: groupName, repository } = require('../package.json');
 const _ = require('lodash');
 
 const version = '0.1.0-beta.1';
@@ -40,7 +40,7 @@ if (!pkgJSONExists) {
     files: ['lib', 'src', 'dist', 'es'],
     repository: {
       type: 'git',
-      url: `http://10.215.171.199:7800/fe-pkgs/awaited/packages/${shortName}`,
+      url: `${repository}/packages/${shortName}`,
     },
     dependencies: {},
     devDependencies: {},
@@ -48,8 +48,8 @@ if (!pkgJSONExists) {
     keywords: ['antd', 'admin', 'ant-design', 'ant-design-pro', shortName, name],
     authors: [],
     license: 'MIT',
-    bugs: 'http://10.215.171.199:7800/fe-pkgs/awaited/-/issues',
-    homepage: `http://10.215.171.199:7800/fe-pkgs/awaited/-/issues`,
+    bugs: `${repository}/-/issues`,
+    homepage: `${repository}/-/issues`,
     peerDependencies: {
       antd: '4.x',
       react: '^16.8.0',

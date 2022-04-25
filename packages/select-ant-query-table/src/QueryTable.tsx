@@ -170,7 +170,7 @@ export default <
               value: list2 as T[],
               remove: onRemove,
               onClick: () => setVisible(true),
-              rowKeyValue: props.value
+              rowKeyValue: props.value,
             })
           ) : (
             <Button type="primary" size="small">
