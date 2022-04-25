@@ -9,3 +9,5 @@ es
 .github
 scripts
 webpack.config.js
+
+**/*/example/*

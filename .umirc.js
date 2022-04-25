@@ -26,8 +26,6 @@ const tailPkgList = pkgList
   .map((path) => [join('packages', path, 'src'), join('packages', path, 'src', 'components')])
   .reduce((acc, val) => acc.concat(val), []);
 
-console.log(`tailPkgList menus:`, tailPkgList);
-
 const isProduction = process.env.NODE_ENV === 'production';
 
 const isDeploy = process.env.SITE_DEPLOY === 'TRUE';

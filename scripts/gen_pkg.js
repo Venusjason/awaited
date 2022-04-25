@@ -127,7 +127,17 @@ if (!existsSync(pkgDirname + '/src/index.ts')) {
 if (!existsSync(`${pkgDirname}/src/${shortName}.md`)) {
   writeFileSync(
     `${pkgDirname}/src/${shortName}.md`,
-    `# ${name}
+    `
+---
+title: ${shortName}
+group:
+  path: /${shortName}
+nav:
+  title: 组件
+  path: /components
+---
+
+    # ${name}
 
 > ${json.description}
 
@@ -165,7 +175,7 @@ export default () => {
 |  api   | 描述    | 数据类型 | 默认值 |
 |  ----  | ----  | ----  |----  |
 |  - | - | - | -  |
-`,
+`.trim(),
   );
 
   console.log(chalk.blue(`gen file success:${pkgDirname}/src/${shortName}.md`));
