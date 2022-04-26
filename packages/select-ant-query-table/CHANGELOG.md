@@ -1,6 +1,20 @@
 # Change Log
 
-All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [0.1.0-beta.4](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/compare/@awaited/select-ant-query-table@0.1.0-beta.3...@awaited/select-ant-query-table@0.1.0-beta.4) (2022-04-26)
+
+
+### Features
+
+* 完善示例 ([e42e7f6](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/commits/e42e7f60703715439af2140261ef7f6681790b8c))
+* doc ([9a53f75](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/commits/9a53f75fc07bf0f5f2344a190dd7d0f9a3f72694))
+* git repository ([dd171f1](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/commits/dd171f143d5adc437ac858465f343d647c190951))
+
+
+
+
 
 # [0.1.0-beta.3](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/compare/@awaited/select-ant-query-table@0.1.0-beta.2...@awaited/select-ant-query-table@0.1.0-beta.3) (2022-04-25)
 
