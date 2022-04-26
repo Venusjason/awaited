@@ -65,12 +65,19 @@ export interface SelectAntQueryTableProps<
   /** 单选 or 多选 默认 checkbox */
   mode?: 'checkbox' | 'radio';
   onValueChange?: (v: T[]) => void;
-  /** 触发按钮自定义 */
+  /** 
+   * 触发按钮自定义 
+   * */
   TriggerComponent?: (props: TriggerComponentProps<T>) => ReactNode;
   service: Service<TData, TParams>;
-  /** 根据id反查数据 */
+  /** 
+   * 根据id反查数据 
+   * 一般用于数据回显使用
+   * */
   getItemsService: (v: (string | number)[]) => Promise<T[]>;
-  /** 同 ant table columns */
+  /** 
+   * 同 ant table columns 
+   * */
   columns: (ColumnGroupType<T> | ColumnType<T>)[];
   /** 
    * 同 ant table tableProps 
@@ -93,7 +100,6 @@ export interface SelectAntQueryTableProps<
    * */
   paginationProps?: any;
 }
-
 ```
 
 <!-- ### API 说明
