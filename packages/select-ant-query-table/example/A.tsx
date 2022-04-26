@@ -79,7 +79,7 @@ export default () => {
       modalProps={{
         title: '人员选择',
       }}
-      mode="radio"
+      mode="checkbox"
       service={service}
       columns={columns}
       tableProps={{ rowKey: 'id' }}
