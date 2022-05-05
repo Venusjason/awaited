@@ -40,7 +40,7 @@ if (!pkgJSONExists) {
     files: ['lib', 'src', 'dist', 'es'],
     repository: {
       type: 'git',
-      url: `${repository}/packages/${shortName}`,
+      url: `${repository.url}/packages/${shortName}`,
     },
     dependencies: {},
     devDependencies: {},
@@ -48,8 +48,8 @@ if (!pkgJSONExists) {
     keywords: ['antd', 'admin', 'ant-design', 'ant-design-pro', shortName, name],
     authors: [],
     license: 'MIT',
-    bugs: `${repository}/-/issues`,
-    homepage: `${repository}/-/issues`,
+    bugs: `${repository.url}/-/issues`,
+    homepage: `${repository.url}/-/issues`,
     peerDependencies: {
       antd: '4.x',
       react: '^16.8.0',
