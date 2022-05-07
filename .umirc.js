@@ -1,36 +1,36 @@
-import { readdirSync } from 'fs';
-import chalk from 'chalk';
-import { join } from 'path';
+import { readdirSync } from 'fs'
+import chalk from 'chalk'
+import { join } from 'path'
 
-const { name: groupName, git } = require('./package.json');
+const { name: groupName, git } = require('./package.json')
 
-const headPkgList = [];
+const headPkgList = []
 // utils must build before core
 // runtime must build before renderer-react
 const pkgList = readdirSync(join(__dirname, 'packages')).filter(
   (pkg) => pkg.charAt(0) !== '.' && !headPkgList.includes(pkg),
-);
+)
 
-console.log(`pkgList =>`, pkgList);
+console.log(`pkgList =>`, pkgList)
 
 const alias = pkgList.reduce((pre, pkg) => {
-  pre[`@${groupName}/${pkg}`] = join(__dirname, 'packages', pkg, 'src/index.ts');
+  pre[`@${groupName}/${pkg}`] = join(__dirname, 'packages', pkg, 'src/index.ts')
   return {
     ...pre,
-  };
-}, {});
+  }
+}, {})
 
-console.log(`🌼 alias list \n${chalk.blue(Object.keys(alias).join('\n'))}`);
+console.log(`🌼 alias list \n${chalk.blue(Object.keys(alias).join('\n'))}`)
 
 const tailPkgList = pkgList
   .map((path) => [join('packages', path, 'src')])
-  .reduce((acc, val) => acc.concat(val), []);
+  .reduce((acc, val) => acc.concat(val), [])
 
-console.log('tailPkgList =>', tailPkgList);
+console.log('tailPkgList =>', tailPkgList)
 
-const isProduction = process.env.NODE_ENV === 'production';
+const isProduction = process.env.NODE_ENV === 'production'
 
-const isDeploy = process.env.SITE_DEPLOY === 'TRUE';
+const isDeploy = process.env.SITE_DEPLOY === 'TRUE'
 
 export default {
   title: groupName,
@@ -137,4 +137,4 @@ export default {
   webpack5: {},
   mfsu: !isDeploy ? {} : undefined,
   fastRefresh: {},
-};
+}

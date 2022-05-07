@@ -1,17 +1,17 @@
-﻿import { useState, useEffect, useMemo } from 'react';
+﻿import { useState, useEffect, useMemo } from 'react'
 
 export type Action = {
-  toggle: () => void;
-  collectCSS: () => Promise<string>;
-};
+  toggle: () => void
+  collectCSS: () => Promise<string>
+}
 
-export type Result = [boolean, Action];
+export type Result = [boolean, Action]
 
 export default function useDarkreader(defaultDarken: boolean = false): [
   boolean,
   {
-    toggle: () => void;
-    collectCSS: () => Promise<string>;
+    toggle: () => void
+    collectCSS: () => Promise<string>
   },
 ] {
   const {
@@ -19,42 +19,42 @@ export default function useDarkreader(defaultDarken: boolean = false): [
     disable: disableDarkMode,
     exportGeneratedCSS: collectCSS,
     setFetchMethod,
-  } = DarkReader || {};
+  } = DarkReader || {}
 
-  const [isDark, setIsDark] = useState(defaultDarken);
+  const [isDark, setIsDark] = useState(defaultDarken)
 
   const defaultTheme = {
     brightness: 100,
     contrast: 90,
     sepia: 10,
-  };
+  }
 
   const defaultFixes = {
     invert: [],
     css: '',
     ignoreInlineStyle: ['.react-switch-handle'],
     ignoreImageAnalysis: [],
-  };
+  }
 
   useEffect(() => {
     if (!DarkReader) {
-      return () => null;
+      return () => null
     }
-    setFetchMethod(fetch);
+    setFetchMethod(fetch)
 
-    isDark ? enableDarkMode(defaultTheme, defaultFixes) : disableDarkMode();
+    isDark ? enableDarkMode(defaultTheme, defaultFixes) : disableDarkMode()
 
     // unmount
     return () => {
-      disableDarkMode();
-    };
-  }, [isDark]);
+      disableDarkMode()
+    }
+  }, [isDark])
 
   const action = useMemo(() => {
-    const toggle = () => setIsDark((prevState) => !prevState);
+    const toggle = () => setIsDark((prevState) => !prevState)
 
-    return { toggle, collectCSS };
-  }, [isDark]);
+    return { toggle, collectCSS }
+  }, [isDark])
 
-  return [isDark, action];
+  return [isDark, action]
 }

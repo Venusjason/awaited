@@ -1,13 +1,13 @@
-export { default as useRequest, setGlobalRequestOption } from './useRequest';
+export { default as useRequest, setGlobalRequestOption } from './useRequest'
 export {
   default as usePaginated,
   setGlobalPaginationOption,
   JsxElTableColumns,
-} from './usePaginated';
+} from './usePaginated'
 
-export { default as useLoadMore } from './useLoadMore';
+export { default as useLoadMore } from './useLoadMore'
 
-export { IOptions, IService } from './useRequest';
+export { IOptions, IService } from './useRequest'
 
 export {
   IPageResponse,
@@ -15,6 +15,6 @@ export {
   IElTableColumnItem,
   IElTableColumnItemProps,
   ITableService,
-} from './usePaginated';
+} from './usePaginated'
 
-export type { ILoadMoreResponse, ILoadMoreOptions } from './useLoadMore';
+export type { ILoadMoreResponse, ILoadMoreOptions } from './useLoadMore'

@@ -1,11 +1,11 @@
-const cachedApiMap: Map<Symbol, { request: any; updateTime: number }> = new Map();
+const cachedApiMap: Map<Symbol, { request: any; updateTime: number }> = new Map()
 
 /** 清除系统接口缓存 */
 export const clearAllMemoryService = () => {
   Array.from(cachedApiMap).forEach(([key]) => {
-    cachedApiMap.delete(key);
-  });
-};
+    cachedApiMap.delete(key)
+  })
+}
 
 /**
  * 请求缓存 支持 自动重置 支持 缓存超时重置
@@ -24,43 +24,43 @@ export default <T = any>(
   /** 唯一键名, 可以直接用 Symbol */
   name: Symbol = Symbol(),
 ) => {
-  let state = 'pending';
+  let state = 'pending'
 
   const cachedFn = function (): Promise<T> {
     if (!cachedApiMap.get(name)) {
-      const updateTime = new Date().getTime();
-      state = 'pending';
-      const request = fn();
+      const updateTime = new Date().getTime()
+      state = 'pending'
+      const request = fn()
       cachedApiMap.set(name, {
         request,
         updateTime,
-      });
+      })
       request
         .then(() => {
-          state = 'fulfilled';
+          state = 'fulfilled'
         })
         .catch(() => {
-          state = 'rejected';
-        });
-      return request;
+          state = 'rejected'
+        })
+      return request
     } else {
       if (state === 'rejected') {
         // 上次请求出错，下次请求走重置
-        return cachedFn.reset();
+        return cachedFn.reset()
       }
-      const updateTime = cachedApiMap.get(name)?.updateTime as number;
+      const updateTime = cachedApiMap.get(name)?.updateTime as number
       if (new Date().getTime() - updateTime >= cacheTime) {
         // 缓存过期
-        return cachedFn.reset();
+        return cachedFn.reset()
       }
-      return cachedApiMap.get(name)?.request;
+      return cachedApiMap.get(name)?.request
     }
-  };
+  }
 
   cachedFn.reset = function () {
-    cachedApiMap.delete(name);
-    return cachedFn();
-  };
+    cachedApiMap.delete(name)
+    return cachedFn()
+  }
 
-  return cachedFn;
-};
+  return cachedFn
+}

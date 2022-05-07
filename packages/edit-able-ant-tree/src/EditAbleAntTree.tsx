@@ -155,7 +155,8 @@ export default (props: IProps) => {
               className={`edit-able-ant-tree-nodetitle-btns ${
                 currentNode !== '' && (currentNode === item.key ? 'editing-node' : 'noediting-node')
               } `}
-              size={'middle'}>
+              size={'middle'}
+            >
               {currentNode === item.key ? (
                 <>
                   <CloseOutlined onClick={() => handleCancel(item)} />
@@ -172,7 +173,8 @@ export default (props: IProps) => {
                       title="你确定要删除吗？"
                       onConfirm={() => handleRemove(item)}
                       okText="确定"
-                      cancelText="取消">
+                      cancelText="取消"
+                    >
                       <MinusOutlined />
                     </Popconfirm>
                   )}

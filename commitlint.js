@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
-const yParser = require('yargs-parser');
-const chalk = require('chalk');
-const osLocale = require('os-locale');
+const yParser = require('yargs-parser')
+const chalk = require('chalk')
+const osLocale = require('os-locale')
 
 // 截取命令行参数
-const args = yParser(process.argv.slice(2));
-const option = args._[0];
+const args = yParser(process.argv.slice(2))
+const option = args._[0]
 
 const judeCommitResult = () => {
   // 提取commit信息
-  const msgPath = process.env.GIT_PARAMS || process.env.HUSKY_GIT_PARAMS;
-  const msg = require('fs').readFileSync(msgPath, 'utf-8').trim();
+  const msgPath = process.env.GIT_PARAMS || process.env.HUSKY_GIT_PARAMS
+  const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
   const commitRE =
-    /^(((\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]) )?(revert: )?(feat|fix|docs|UI|refactor|⚡perf|workflow|build|CI|typos|chore|tests|types|wip|release|dep|locale)(\(.+\))?: .{1,50}/;
+    /^(((\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]) )?(revert: )?(feat|fix|docs|UI|refactor|⚡perf|workflow|build|CI|typos|chore|tests|types|wip|release|dep|locale)(\(.+\))?: .{1,50}/
 
   if (!commitRE.test(msg)) {
     osLocale().then((locale) => {
@@ -30,7 +30,7 @@ const judeCommitResult = () => {
       ${chalk.green(`🏰 chore(模块): 对脚手架做了些更改`)}
       ${chalk.green(`🌐 locale(模块): 为国际化做了微小的贡献`)}
       ${chalk.red(`See https://github.com/MrXujiang/best-cps for more details.\n`)}`,
-        );
+        )
       } else {
         console.error(
           `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
@@ -46,19 +46,19 @@ const judeCommitResult = () => {
       ${chalk.green(`🏰 chore(compiler): Made some changes to the scaffolding`)}
       ${chalk.green(`🌐 locale(compiler): Made a small contribution to internationalization`)}\n
       ${chalk.red(`See https://github.com/MrXujiang/best-cps for more details.\n`)}`,
-        );
+        )
       }
 
-      process.exit(1);
-    });
+      process.exit(1)
+    })
   }
-};
+}
 
 switch (option) {
   case 'verify-commit':
     // eslint-disable-next-line global-require
-    judeCommitResult();
-    break;
+    judeCommitResult()
+    break
 
   default:
     if (args.h || args.help) {
@@ -67,8 +67,8 @@ switch (option) {
           ${chalk.cyan('verify-commit')}    检查 commit 提交的信息
         More:
         ${chalk.red(`See https://github.com/MrXujiang/best-cps.\n`)}  
-        `.trim();
-      console.log(details);
+        `.trim()
+      console.log(details)
     }
-    break;
+    break
 }

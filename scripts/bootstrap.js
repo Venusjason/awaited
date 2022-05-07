@@ -1,19 +1,19 @@
 // 自动生成组件库的package.json和readme文件
-const { existsSync, writeFileSync, readdirSync } = require('fs');
-const { join } = require('path');
-const { yParser } = require('@umijs/utils');
+const { existsSync, writeFileSync, readdirSync } = require('fs')
+const { join } = require('path')
+const { yParser } = require('@umijs/utils')
 const { name: groupName } = require('../package.json')(async () => {
-  const args = yParser(process.argv);
-  const version = '1.0.0-beta.1';
+  const args = yParser(process.argv)
+  const version = '1.0.0-beta.1'
 
-  const pkgs = readdirSync(join(__dirname, '../packages')).filter((pkg) => pkg.charAt(0) !== '.');
+  const pkgs = readdirSync(join(__dirname, '../packages')).filter((pkg) => pkg.charAt(0) !== '.')
 
   pkgs.forEach((shortName) => {
-    const name = `${shortName}`;
+    const name = `${shortName}`
 
-    const pkgJSONPath = join(__dirname, '..', 'packages', shortName, 'package.json');
-    const pkgJSONExists = existsSync(pkgJSONPath);
-    let json;
+    const pkgJSONPath = join(__dirname, '..', 'packages', shortName, 'package.json')
+    const pkgJSONExists = existsSync(pkgJSONPath)
+    let json
     if (args.force || !pkgJSONExists) {
       json = {
         name,
@@ -40,10 +40,10 @@ const { name: groupName } = require('../package.json')(async () => {
         publishConfig: {
           access: 'public',
         },
-      };
+      }
       if (pkgJSONExists) {
-        const pkg = require(pkgJSONPath);
-        [
+        const pkg = require(pkgJSONPath)
+        ;[
           'dependencies',
           'devDependencies',
           'peerDependencies',
@@ -57,13 +57,13 @@ const { name: groupName } = require('../package.json')(async () => {
           'module',
           'description',
         ].forEach((key) => {
-          if (pkg[key]) json[key] = pkg[key];
-        });
+          if (pkg[key]) json[key] = pkg[key]
+        })
       }
-      writeFileSync(pkgJSONPath, `${JSON.stringify(json, null, 2)}\n`);
+      writeFileSync(pkgJSONPath, `${JSON.stringify(json, null, 2)}\n`)
     }
 
-    const readmePath = join(__dirname, '..', 'packages', shortName, 'README.md');
+    const readmePath = join(__dirname, '..', 'packages', shortName, 'README.md')
     if (args.force || !existsSync(readmePath)) {
       writeFileSync(
         readmePath,
@@ -87,7 +87,7 @@ or using yarn:
 $ yarn add @${groupName}/${name}]
 \`\`\`
 `,
-      );
+      )
     }
-  });
-})();
+  })
+})()

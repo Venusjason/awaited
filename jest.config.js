@@ -1,14 +1,14 @@
-const { readdirSync } = require('fs');
-const { join } = require('path');
+const { readdirSync } = require('fs')
+const { join } = require('path')
 
-const pkgList = readdirSync(join(__dirname, './packages')).filter((pkg) => pkg.charAt(0) !== '.');
+const pkgList = readdirSync(join(__dirname, './packages')).filter((pkg) => pkg.charAt(0) !== '.')
 
-const moduleNameMapper = {};
+const moduleNameMapper = {}
 
 pkgList.forEach((shortName) => {
-  const name = `@ant-design/pro-${shortName}`;
-  moduleNameMapper[name] = join(__dirname, `./packages/${shortName}/src`);
-});
+  const name = `@ant-design/pro-${shortName}`
+  moduleNameMapper[name] = join(__dirname, `./packages/${shortName}/src`)
+})
 
 module.exports = {
   collectCoverageFrom: [
@@ -26,4 +26,4 @@ module.exports = {
   globals: {
     ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION: false,
   },
-};
+}

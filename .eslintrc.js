@@ -11,4 +11,4 @@ module.exports = {
     'import/no-unresolved': 0,
     'import/no-useless-constructor': 0,
   },
-};
+}

@@ -14,18 +14,22 @@ nav:
 > 用于实现表单内 选择复杂数据的组件，如商品选择器
 
 ### 组件功能
-  * 支持单选、多选
-  * 支持触发模块自定义
-  * 支持列表数据展示自定义
-  * 支持查询表单自定义
+
+- 支持单选、多选
+- 支持触发模块自定义
+- 支持列表数据展示自定义
+- 支持查询表单自定义
 
 ### 组件实现
-  * 依赖 antd :
-    - modal
-    - table
+
+- 依赖 antd :
+  - modal
+  - table
 
 ### 作者
-  * 金星
+
+- 金星
+
 ## Install
 
 Using npm:
@@ -48,11 +52,11 @@ $ yarn add @awaited/select-ant-query-table
 
 ```ts
 export interface TriggerComponentProps<T = any> {
-  value: T[];
-  rowKeyValue: (string | number)[];
+  value: T[]
+  rowKeyValue: (string | number)[]
   // 删除
-  remove: (id: string | number, index: number) => void;
-  onClick: () => void;
+  remove: (id: string | number, index: number) => void
+  onClick: () => void
 }
 
 export interface SelectAntQueryTableProps<
@@ -60,45 +64,26 @@ export interface SelectAntQueryTableProps<
   TData extends Data,
   TParams extends Params,
 > {
-  value: (string | number)[];
-  onChange: (v: (string | number)[]) => void;
+  value: (string | number)[]
+  onChange: (v: (string | number)[]) => void
   /** 单选 or 多选 默认 checkbox */
-  mode?: 'checkbox' | 'radio';
-  onValueChange?: (v: T[]) => void;
-  /** 
-   * 触发按钮自定义 
-   * */
-  TriggerComponent?: (props: TriggerComponentProps<T>) => ReactNode;
-  service: Service<TData, TParams>;
-  /** 
-   * 根据id反查数据 
-   * 一般用于数据回显使用
-   * */
-  getItemsService: (v: (string | number)[]) => Promise<T[]>;
-  /** 
-   * 同 ant table columns 
-   * */
-  columns: (ColumnGroupType<T> | ColumnType<T>)[];
-  /** 
-   * 同 ant table tableProps 
-   * https://ant.design/components/table-cn/#API
-   * */
-  tableProps?: TableProps<T>;
-  /** 
-   * 同 ant modal props 
-   * https://ant.design/components/modal-cn/#API
-   * */
-  modalProps?: ModalProps;
-  /** 
-   * 表单上的查询项 
-   * formValue 作为 service 的第二个参数传入
-   * */
-  children?: (run: (formValue: object) => void) => ReactNode;
-  /** 
-   * 同 ant pagination props 
-   * https://ant.design/components/pagination-cn/#API
-   * */
-  paginationProps?: any;
+  mode?: 'checkbox' | 'radio'
+  onValueChange?: (v: T[]) => void
+  /** 触发按钮自定义 */
+  TriggerComponent?: (props: TriggerComponentProps<T>) => ReactNode
+  service: Service<TData, TParams>
+  /** 根据id反查数据 一般用于数据回显使用 */
+  getItemsService: (v: (string | number)[]) => Promise<T[]>
+  /** 同 ant table columns */
+  columns: (ColumnGroupType<T> | ColumnType<T>)[]
+  /** 同 ant table tableProps https://ant.design/components/table-cn/#API */
+  tableProps?: TableProps<T>
+  /** 同 ant modal props https://ant.design/components/modal-cn/#API */
+  modalProps?: ModalProps
+  /** 表单上的查询项 formValue 作为 service 的第二个参数传入 */
+  children?: (run: (formValue: object) => void) => ReactNode
+  /** 同 ant pagination props https://ant.design/components/pagination-cn/#API */
+  paginationProps?: any
 }
 ```
 

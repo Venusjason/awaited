@@ -1,39 +1,39 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { readdirSync } = require('fs');
+const { readdirSync } = require('fs')
 
-const { name: groupName } = require('./package.json');
+const { name: groupName } = require('./package.json')
 
 const tailPkgs = readdirSync(path.join(__dirname, 'packages')).filter(
   (pkg) => pkg.charAt(0) !== '.',
-);
+)
 
 // const tailPkgs = ['table'];
 
-const isCI = process.env.PRO_COMPONENTS_CI === 'CI';
+const isCI = process.env.PRO_COMPONENTS_CI === 'CI'
 
 const externals = isCI
   ? tailPkgs.reduce((pre, value) => {
       return {
         ...pre,
         [`@${groupName}/${value}`]: path.join(__dirname, `packages/${value}/src/index.tsx`),
-      };
+      }
     }, {})
-  : {};
+  : {}
 
-console.log(externals);
+console.log(externals)
 
-const webPackConfigList = [];
+const webPackConfigList = []
 
 tailPkgs.forEach((pkg) => {
-  const entry = {};
-  entry[`${pkg}`] = `./packages/${pkg}/src/index.tsx`;
+  const entry = {}
+  entry[`${pkg}`] = `./packages/${pkg}/src/index.tsx`
   if (!isCI) {
-    entry[`${pkg}.min`] = `./packages/${pkg}/src/index.tsx`;
+    entry[`${pkg}.min`] = `./packages/${pkg}/src/index.tsx`
   }
   const config = {
     entry,
@@ -156,8 +156,8 @@ tailPkgs.forEach((pkg) => {
         chunkFilename: '[id].css',
       }),
     ],
-  };
-  webPackConfigList.push(config);
-});
+  }
+  webPackConfigList.push(config)
+})
 
-module.exports = webPackConfigList;
+module.exports = webPackConfigList

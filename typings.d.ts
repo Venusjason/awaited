@@ -1,7 +1,7 @@
-declare module '*.module.less';
+declare module '*.module.less'
 
 interface Window {
-  DarkReader: any;
+  DarkReader: any
 }
 
-declare const DarkReader;
+declare const DarkReader

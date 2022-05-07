@@ -30,16 +30,16 @@ a 方案：看着还不错，但是在**小程序平台对代码体积有限制*
 
 ```javascript
 // 全局定义
-let data;
+let data
 
 async function getData() {
-  const res = await fetch();
-  data = res;
+  const res = await fetch()
+  data = res
 }
 
 // 调用层
 if (!data) {
-  await getData();
+  await getData()
 }
 // 再去使用data
 ```
@@ -57,7 +57,7 @@ if (!data) {
 ```javascript
 getMemoryData().then((res) => {
   // res 可能是缓存中的值，也可能是直接向后端请求来的
-});
+})
 ```
 
 - 调用层并不关注 值从后端接口获取还是前端缓存中读取，但这必然是个异步回调
@@ -69,7 +69,7 @@ getMemoryData().then((res) => {
 ### 怎么使用
 
 ```typescript
-import setMemoryService, { clearAllMemoryService } from '@awaited/set-memory-service';
+import setMemoryService, { clearAllMemoryService } from '@awaited/set-memory-service'
 
 // 请求后端省市区的接口
 const getAddrs = () => {
@@ -94,25 +94,25 @@ const getAddrs = () => {
         },
       ],
     },
-  ];
+  ]
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(data);
-    }, 1000);
-  });
-};
+      resolve(data)
+    }, 1000)
+  })
+}
 
 const getMemoryAddrs = setMemoryService(
   getAddrs,
   1 * 60 * 60 * 1000, // 数据1h 内可不刷新
   Symbol('getAddrs'), // 可不传
-);
+)
 
 getMemoryAddrs().then((res) => {
   // 可能是缓存的结果，但是调用层并没有感知
-});
+})
 // 强制刷新省市区数据
-getMemoryAddrs.reset();
+getMemoryAddrs.reset()
 ```
 
 这样业务开发人员可以在系统中任意逻辑页面中 无脑调用 `getMemoryAddrs()` ，当用户的页面第一次请求到数据后，切换到其他页面可以迅速获取上一次获取到的数据，对开发者来说封装足够简洁，灵活些强、侵入性低

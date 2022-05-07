@@ -1,8 +1,8 @@
-﻿const Octokit = require('@octokit/core');
+﻿const Octokit = require('@octokit/core')
 
 const octokit = new Octokit.Octokit({
   auth: process.env.GITHUB_TOKEN || process.env.GITHUB_AUTH,
-});
+})
 
 const queryIssue = ({ title, id }) => {
   return octokit
@@ -17,11 +17,11 @@ const queryIssue = ({ title, id }) => {
             title: item.title,
             url: item.html_url,
             id: item.id,
-          };
+          }
         })
         .filter((item) => {
-          return item.id !== id;
-        });
+          return item.id !== id
+        })
 
       if (list.length > 0) {
         return `
@@ -31,55 +31,55 @@ const queryIssue = ({ title, id }) => {
 
 ${list
   .map((item) => {
-    return `* [${item.title}](${item.url})`;
+    return `* [${item.title}](${item.url})`
   })
-  .join('\n')}`;
+  .join('\n')}`
       }
-      return null;
+      return null
     })
     .then(async (markdown) => {
-      return markdown;
-    });
-};
+      return markdown
+    })
+}
 
 const findIssue = async (issueId) => {
   const { data } = await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
     owner: 'ant-design',
     repo: 'pro-components',
     issue_number: issueId,
-  });
-  return data;
-};
+  })
+  return data
+}
 const closeIssue = async (issueId) => {
   await octokit.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
     owner: 'ant-design',
     repo: 'pro-components',
     issue_number: issueId,
     state: 'closed',
-  });
-};
+  })
+}
 const replyCommit = async (issueId, markdown) => {
   await octokit.request('POST /repos/{owner}/{repo}/issues/{issue_number}/comments', {
     owner: 'ant-design',
     repo: 'pro-components',
     issue_number: issueId,
     body: markdown,
-  });
-};
+  })
+}
 
 const reply = async () => {
-  const issueId = process.env.ISSUE_NUMBER;
-  const issue = await findIssue(issueId);
+  const issueId = process.env.ISSUE_NUMBER
+  const issue = await findIssue(issueId)
   if (!issue.title || issue.title.length < 12) {
-    replyCommit(issueId, '**请写一个可读的标题！**');
-    closeIssue(issueId);
-    return;
+    replyCommit(issueId, '**请写一个可读的标题！**')
+    closeIssue(issueId)
+    return
   }
   // const markdown = await queryIssue({
   //   title: issue.title,
   //   id: issue.id,
   // });
   // replyCommit(issueId, markdown);
-};
+}
 
-reply();
+reply()

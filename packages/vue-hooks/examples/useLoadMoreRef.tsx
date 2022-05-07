@@ -1,54 +1,54 @@
-import { defineComponent, ref, reactive } from 'vue-demi';
-import { useLoadMore, ILoadMoreResponse } from '@weier/w-vue-hooks';
+import { defineComponent, ref, reactive } from 'vue-demi'
+import { useLoadMore, ILoadMoreResponse } from '@weier/w-vue-hooks'
 // 使用require code 语法
-const dataSource = [];
+const dataSource = []
 for (let i = 0; i < 10000; i++) {
   dataSource.push({
     id: i,
     title: `use load more , id ${i}`,
-  });
+  })
 }
 
 export default defineComponent({
   setup() {
-    const containerRef = ref(null);
+    const containerRef = ref(null)
     const refreshDeps = reactive({
       minId: 5,
       maxId: 20,
-    });
+    })
 
     const asyncFn = async ({ pageSize = 5, pageIndex = 0, list = [] }: any = {}): Promise<
       ILoadMoreResponse<any>
     > => {
-      const { minId, maxId } = refreshDeps;
+      const { minId, maxId } = refreshDeps
       let results = dataSource.filter(({ id }) => {
-        return id > minId && id <= maxId;
-      });
+        return id > minId && id <= maxId
+      })
 
-      const total = results.length;
+      const total = results.length
 
-      pageIndex++;
+      pageIndex++
 
-      results = results.slice((pageIndex - 1) * pageSize, pageIndex * pageSize) || [];
+      results = results.slice((pageIndex - 1) * pageSize, pageIndex * pageSize) || []
 
-      await $sleep(2000);
+      await $sleep(2000)
 
-      const arr = [...list, ...results];
+      const arr = [...list, ...results]
 
       return {
         total,
         list: arr,
         pageSize,
         pageIndex,
-      };
-    };
+      }
+    }
 
     const { loadMore, reload, data, noMore, loading } = useLoadMore(asyncFn, {
       ref: containerRef,
       isNoMore: (d) => (d ? d?.list?.length >= d.total : false),
       refreshDeps: () => [refreshDeps.minId, refreshDeps.maxId],
       throttleInterval: 800,
-    });
+    })
 
     return {
       loading,
@@ -58,10 +58,10 @@ export default defineComponent({
       reload,
       containerRef,
       refreshDeps,
-    };
+    }
   },
   render() {
-    const { loading, data, loadMore, reload, noMore } = this;
+    const { loading, data, loadMore, reload, noMore } = this
     return (
       <div>
         <el-card>
@@ -91,6 +91,6 @@ export default defineComponent({
           <span style={{ float: 'right', fontSize: 12 }}>total: {data?.total}</span>
         </div>
       </div>
-    );
+    )
   },
-});
+})

@@ -1,34 +1,34 @@
 // 自动生成组件库的package.json和readme文件
-const { existsSync, writeFileSync, readdirSync, mkdirSync } = require('fs');
-const chalk = require('chalk');
-const { join } = require('path');
-const { yParser } = require('@umijs/utils');
-const { name: groupName, repository } = require('../package.json');
-const _ = require('lodash');
+const { existsSync, writeFileSync, readdirSync, mkdirSync } = require('fs')
+const chalk = require('chalk')
+const { join } = require('path')
+const { yParser } = require('@umijs/utils')
+const { name: groupName, repository } = require('../package.json')
+const _ = require('lodash')
 
-const version = '0.1.0-beta.1';
+const version = '0.1.0-beta.1'
 
-const [, , shortName] = process.argv;
+const [, , shortName] = process.argv
 
-const pkgDirname = join(__dirname, '..', 'packages', shortName);
+const pkgDirname = join(__dirname, '..', 'packages', shortName)
 
 /** 校验小写 字母开头 字母 数字 连接符 */
-const reg = /^[a-z0-9-]+$/;
+const reg = /^[a-z0-9-]+$/
 if (!reg.test(shortName)) {
-  console.error(`${shortName} 不符合npm包命名规范`);
-  process.exit(1);
-  return;
+  console.error(`${shortName} 不符合npm包命名规范`)
+  process.exit(1)
+  return
 }
 
 if (!existsSync(join(__dirname, '..', 'packages', shortName))) {
-  mkdirSync(join(__dirname, '..', 'packages', shortName));
+  mkdirSync(join(__dirname, '..', 'packages', shortName))
 }
 
-const name = `@${groupName}/${shortName}`;
+const name = `@${groupName}/${shortName}`
 
-const pkgJSONPath = join(__dirname, '..', 'packages', shortName, 'package.json');
-const pkgJSONExists = existsSync(pkgJSONPath);
-let json;
+const pkgJSONPath = join(__dirname, '..', 'packages', shortName, 'package.json')
+const pkgJSONExists = existsSync(pkgJSONPath)
+let json
 if (!pkgJSONExists) {
   json = {
     name,
@@ -57,10 +57,10 @@ if (!pkgJSONExists) {
     publishConfig: {
       access: 'public',
     },
-  };
+  }
   if (pkgJSONExists) {
-    const pkg = require(pkgJSONPath);
-    [
+    const pkg = require(pkgJSONPath)
+    ;[
       'dependencies',
       'devDependencies',
       'peerDependencies',
@@ -74,14 +74,14 @@ if (!pkgJSONExists) {
       'module',
       'description',
     ].forEach((key) => {
-      if (pkg[key]) json[key] = pkg[key];
-    });
+      if (pkg[key]) json[key] = pkg[key]
+    })
   }
-  writeFileSync(pkgJSONPath, `${JSON.stringify(json, null, 2)}\n`);
-  console.log(chalk.blue(`gen file success:${pkgJSONPath}`));
+  writeFileSync(pkgJSONPath, `${JSON.stringify(json, null, 2)}\n`)
+  console.log(chalk.blue(`gen file success:${pkgJSONPath}`))
 }
 
-const readmePath = join(__dirname, '..', 'packages', shortName, 'README.md');
+const readmePath = join(__dirname, '..', 'packages', shortName, 'README.md')
 if (!existsSync(readmePath)) {
   writeFileSync(
     readmePath,
@@ -105,12 +105,12 @@ or using yarn:
 $ yarn add ${name}
 \`\`\`
 `,
-  );
+  )
 
-  console.log(chalk.blue(`gen file success:${readmePath}`));
+  console.log(chalk.blue(`gen file success:${readmePath}`))
 }
 
-if (!existsSync(pkgDirname + '/src')) mkdirSync(pkgDirname + '/src');
+if (!existsSync(pkgDirname + '/src')) mkdirSync(pkgDirname + '/src')
 
 if (!existsSync(pkgDirname + '/src/index.ts')) {
   writeFileSync(
@@ -120,8 +120,8 @@ if (!existsSync(pkgDirname + '/src/index.ts')) {
     * 组件导出口
     * /
     `,
-  );
-  console.log(chalk.blue(`gen file success:${pkgDirname + '/src/index.ts'}`));
+  )
+  console.log(chalk.blue(`gen file success:${pkgDirname + '/src/index.ts'}`))
 }
 
 if (!existsSync(`${pkgDirname}/src/${shortName}.md`)) {
@@ -176,7 +176,7 @@ export default () => {
 |  ----  | ----  | ----  |----  |
 |  - | - | - | -  |
 `.trim(),
-  );
+  )
 
-  console.log(chalk.blue(`gen file success:${pkgDirname}/src/${shortName}.md`));
+  console.log(chalk.blue(`gen file success:${pkgDirname}/src/${shortName}.md`))
 }
