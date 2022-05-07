@@ -43,7 +43,7 @@ const genUuid = () => KEY_NAME + id++
 const isMyKey = (key: string) => typeof key === 'string' && key.startsWith(KEY_NAME)
 
 export default (props: IProps) => {
-  const { treeData } = props
+  const { treeData, ...restProps } = props
   // const loadData = ({ key, title }: DataNode, newNode: DataNode) => {}
   const [expandKeys, setExpandKeys] = useState<Key[]>(props.expandedKeys || [])
   const [currentNode, setCurrentNode] = useState<string | number>('')
@@ -189,13 +189,12 @@ export default (props: IProps) => {
 
   return (
     <Tree
+      {...restProps}
       showLine={true}
       showIcon={true}
       treeData={treeNodes}
       expandedKeys={expandKeys}
       onExpand={(expandedKeys: Key[], info) => {
-        console.log(expandedKeys, info)
-
         setExpandKeys(expandedKeys)
       }}
     />
