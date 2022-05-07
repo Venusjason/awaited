@@ -103,7 +103,6 @@ export default ({ children, ...props }: IRouteComponentProps) => {
       // @ts-ignore
       gtag('config', 'G-RMBLDHGL1N')
     })
-
     ;(function (h, o, t, j, a, r) {
       // @ts-ignore
       h.hj =

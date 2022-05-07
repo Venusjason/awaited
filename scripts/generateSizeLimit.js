@@ -14,7 +14,6 @@ delete json['size-limit']
 let componentsNames = fs.readdirSync(packagesDir)
 
 componentsNames = componentsNames.filter((dir) => ignoreDirPath.indexOf(dir) === -1)
-
 ;(async () => {
   const sizeLimitConfig = []
   componentsNames.forEach((component) => {

@@ -5,19 +5,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.8.0](http://git.hcece.com:22122/fe-pkgs/hdec/compare/@awaited/x-storage@0.7.0...@awaited/x-storage@0.8.0) (2022-05-07)
 
-
 ### Bug Fixes
 
-* eslint ([4abe5cc](http://git.hcece.com:22122/fe-pkgs/hdec/commits/4abe5cc9f4af072942e2be6109f8f67e504664e2))
-
+- eslint ([4abe5cc](http://git.hcece.com:22122/fe-pkgs/hdec/commits/4abe5cc9f4af072942e2be6109f8f67e504664e2))
 
 ### Features
 
-* eslint ([7a9d1af](http://git.hcece.com:22122/fe-pkgs/hdec/commits/7a9d1af47acbcfa26042a583cf67440f823abadb))
-
-
-
-
+- eslint ([7a9d1af](http://git.hcece.com:22122/fe-pkgs/hdec/commits/7a9d1af47acbcfa26042a583cf67440f823abadb))
 
 # 0.7.0 (2022-04-18)
 
