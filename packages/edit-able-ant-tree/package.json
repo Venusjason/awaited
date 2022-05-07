@@ -1,0 +1,46 @@
+{
+  "name": "@awaited/edit-able-ant-tree",
+  "version": "0.1.0",
+  "description": "@awaited/edit-able-ant-tree",
+  "module": "es/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "dist",
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://git.hcece.com/fe-pkgs/hdec/packages/edit-able-ant-tree"
+  },
+  "devDependencies": {
+    "immutability-helper": "^3.1.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 11"
+  ],
+  "keywords": [
+    "antd",
+    "admin",
+    "ant-design",
+    "ant-design-pro",
+    "edit-able-ant-tree",
+    "@awaited/edit-able-ant-tree"
+  ],
+  "authors": [],
+  "license": "MIT",
+  "bugs": "https://git.hcece.com/fe-pkgs/hdec/-/issues",
+  "homepage": "https://git.hcece.com/fe-pkgs/hdec/-/issues",
+  "peerDependencies": {
+    "antd": "4.x",
+    "react": "^16.8.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

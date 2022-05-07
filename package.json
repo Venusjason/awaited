@@ -83,7 +83,7 @@
     "@umijs/test": "^3.2.10",
     "@umijs/test-utils": "^3.2.10",
     "@umijs/utils": "^3.2.11",
-    "antd": "^4.16.1",
+    "antd": "4.19.5",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.12.2",
     "babel-types": "^6.26.0",
@@ -211,5 +211,12 @@
   ],
   "dependencies": {
     "ahooks": "^3.3.8"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   }
 }

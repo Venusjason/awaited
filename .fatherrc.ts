@@ -1,19 +1,21 @@
 import { readdirSync } from 'fs';
 import { join, resolve } from 'path';
 
+const type = process.env.BUILD_TYPE;
+const singlePkg = process.env.BUILD_PKG
 // utils must build before core
 // runtime must build before renderer-react
 // components dependencies order: form -> table -> list
 const headPkgs: string[] = ['utils', 'skeleton'];
 const tailPkgs = readdirSync(join(__dirname, 'packages')).filter(
-  (pkg) => pkg.charAt(0) !== '.' && !headPkgs.includes(pkg),
+  (pkg) => {
+    if (!singlePkg) {
+      return pkg.charAt(0) !== '.' && !headPkgs.includes(pkg)
+    } else {
+      return pkg === singlePkg
+    }
+  },
 );
-
-// const pkgFilter = {
-//   exclude: [resolve(__dirname, './packages/select-ant-query-table/src/example/A.tsx')]
-// }
-
-const type = process.env.BUILD_TYPE;
 
 let config = {};
 
