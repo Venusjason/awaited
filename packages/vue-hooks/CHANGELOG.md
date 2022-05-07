@@ -1,6 +1,23 @@
 # Change Log
 
-All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [0.2.0-beta.11](http://git.hcece.com:22122/fe-pkgs/hdec/compare/@awaited/vue-hooks@0.2.0-beta.10...@awaited/vue-hooks@0.2.0-beta.11) (2022-05-07)
+
+
+### Bug Fixes
+
+* eslint ([4abe5cc](http://git.hcece.com:22122/fe-pkgs/hdec/commits/4abe5cc9f4af072942e2be6109f8f67e504664e2))
+
+
+### Features
+
+* eslint ([7a9d1af](http://git.hcece.com:22122/fe-pkgs/hdec/commits/7a9d1af47acbcfa26042a583cf67440f823abadb))
+
+
+
+
 
 # 0.2.0-beta.10 (2022-04-18)
 

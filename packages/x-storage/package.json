@@ -1,6 +1,6 @@
 {
   "name": "@awaited/x-storage",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "awaited 缓存",
   "main": "es/index.js",
   "typings": "es/index.d.ts",

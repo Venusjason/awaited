@@ -1,6 +1,6 @@
 {
   "name": "@awaited/edit-able-ant-tree",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "@awaited/edit-able-ant-tree",
   "module": "es/index.js",
   "main": "lib/index.js",

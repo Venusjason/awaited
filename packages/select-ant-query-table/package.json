@@ -1,6 +1,6 @@
 {
   "name": "@awaited/select-ant-query-table",
-  "version": "0.1.0-beta.4",
+  "version": "0.1.0-beta.5",
   "description": "@awaited/select-ant-query-table",
   "module": "es/index.js",
   "main": "lib/index.js",

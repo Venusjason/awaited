@@ -1,6 +1,6 @@
 {
   "name": "@awaited/vue-hooks",
-  "version": "0.2.0-beta.10",
+  "version": "0.2.0-beta.11",
   "description": "仿ahooks api实现vue版本",
   "main": "es/index.js",
   "typings": "es/index.d.ts",

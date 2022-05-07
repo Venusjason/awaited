@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0-beta.5](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/compare/@awaited/select-ant-query-table@0.1.0-beta.4...@awaited/select-ant-query-table@0.1.0-beta.5) (2022-05-07)
+
+
+### Bug Fixes
+
+* eslint ([4abe5cc](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/commits/4abe5cc9f4af072942e2be6109f8f67e504664e2))
+
+
+
+
+
 # [0.1.0-beta.4](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/compare/@awaited/select-ant-query-table@0.1.0-beta.3...@awaited/select-ant-query-table@0.1.0-beta.4) (2022-04-26)
 
 ### Features
