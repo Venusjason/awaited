@@ -1,0 +1,19 @@
+.edit-able-ant-tree {
+  &-nodetitle {
+    &-btns {
+      display: none;
+    }
+  }
+
+  &-nodetitle:hover &-nodetitle-btns {
+    display: inline-flex;
+  }
+
+  &-nodetitle &-nodetitle-btns.editing-node {
+    display: inline-flex;
+  }
+
+  &-nodetitle:hover &-nodetitle-btns.noediting-node {
+    display: none;
+  }
+}
