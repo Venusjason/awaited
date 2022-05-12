@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/compare/@awaited/select-ant-query-table@0.1.0-beta.5...@awaited/select-ant-query-table@0.3.0) (2022-05-12)
+
+
+### Features
+
+* log ([e674038](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/commits/e6740382503ab2fb18a1f8a06978dcefc1de02ee))
+* pkg ([7c8efa1](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/commits/7c8efa158ce677bbe8b293fab9ecf122931b898e))
+
+
+
+
+
 # [0.1.0-beta.5](http://10.215.171.199:7800/fe-pkgs/awaited/packages/select-ant-query-table/compare/@awaited/select-ant-query-table@0.1.0-beta.4...@awaited/select-ant-query-table@0.1.0-beta.5) (2022-05-07)
 
 ### Bug Fixes
