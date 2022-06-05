@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://git.hcece.com/fe-pkgs/hdec/packages/edit-able-ant-tree"
+    "url": "https://github.com/Venusjason/awaited/packages/edit-able-ant-tree"
   },
   "devDependencies": {
     "immutability-helper": "^3.1.1"
@@ -34,8 +34,8 @@
   ],
   "authors": [],
   "license": "MIT",
-  "bugs": "https://git.hcece.com/fe-pkgs/hdec/-/issues",
-  "homepage": "https://git.hcece.com/fe-pkgs/hdec/-/issues",
+  "bugs": "https://github.com/Venusjason/awaited/-/issues",
+  "homepage": "https://github.com/Venusjason/awaited/-/issues",
   "peerDependencies": {
     "antd": "4.x",
     "react": "^16.8.0"
